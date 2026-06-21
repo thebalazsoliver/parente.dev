@@ -29,6 +29,7 @@ const C = {
 const instagramUrl = "https://www.instagram.com/parentegoaltending?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==";
 const instagramHandle = "@parentegoaltending";
 const campPostUrl = "https://www.instagram.com/p/DYqrdsTjWvZ/";
+const googleReviewsUrl = "https://share.google/06aAuQv7RQLWDSJNV";
 const phoneDisplay = "(647) 523-4438";
 const phoneHref = "tel:+16475234438";
 const emailAddress = "albert.parente@gmail.com";
@@ -37,9 +38,9 @@ const businessName = "Parente Goaltending";
 const navLinks = [
   ["About", "#about"],
   ["Meet Albert", "#meet-albert"],
+  ["Reviews", "#testimonials"],
   ["Programs", "#programs"],
   ["Camps", "#camps"],
-  ["Training", "#training"],
   ["Contact", "#contact"],
 ];
 
@@ -63,6 +64,28 @@ const programs = [
     title: "Video Review",
     desc: "Detailed analysis of game or practice footage with simple, actionable feedback goalies can apply immediately.",
     points: ["Game footage analysis", "Technical corrections", "Actionable next steps"],
+  },
+];
+
+
+const testimonials = [
+  {
+    quote:
+      "My son Mason drove all the way from Barrie to attend Parente Goaltending with Albert. We really enjoyed our semi-private session and Mason has applied the techniques he was taught in only one session into his next games. We look forward to another session soon.\nAlbert was so nice and they made Mason feel welcome.\nWe will definitely return.",
+    name: "Christine and Mason Romanelli",
+    label: "Google Review",
+  },
+  {
+    quote:
+      "I started working with Albert in 2022, and that same season I was selected as Goalie of the Year in my division. I think that says it all. He helped me make the jump from junior hockey to the professional level..",
+    name: "Oliver Balázs",
+    label: "Google Review",
+  },
+  {
+    quote:
+      "Our son has been training with Albert at Parente Goaltending for almost 1 year and we are so happy with the results! He has the knowledge and patience for goalies of all ages and skill levels, explaining positioning and technique thoroughly and with in-game references. He cares about the development and success of his clients, and it shows!",
+    name: "Renee McGrath",
+    label: "Google Review",
   },
 ];
 
@@ -281,6 +304,114 @@ body{font-family:'DM Sans',sans-serif;background:${C.white};color:${C.ink}}
 
 .hero-last-line{white-space:normal}
 
+
+
+.testimonials-section{
+  background:linear-gradient(135deg,${C.ink},${C.redDark});
+  padding:120px 32px;
+  color:#fff;
+}
+.testimonials-container{
+  max-width:1280px;
+  margin:0 auto;
+}
+.testimonials-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:32px;
+  margin-bottom:56px;
+}
+.testimonials-header h2{
+  font-size:clamp(28px,4vw,52px);
+  font-weight:900;
+  line-height:1.05;
+  letter-spacing:-.02em;
+  color:#fff;
+}
+.testimonials-header p{
+  max-width:420px;
+  font-size:15px;
+  line-height:1.75;
+  color:rgba(255,255,255,.66);
+  font-weight:300;
+}
+.testimonials-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2px;
+}
+.testimonial-card{
+  min-height:390px;
+  padding:34px 30px;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.055);
+  display:flex;
+  flex-direction:column;
+  transition:transform .25s ease,border-color .25s ease,background .25s ease;
+}
+.testimonial-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(200,146,42,.75);
+  background:rgba(255,255,255,.085);
+}
+.testimonial-stars{
+  color:${C.gold};
+  letter-spacing:.08em;
+  font-size:15px;
+  margin-bottom:12px;
+}
+.testimonial-label{
+  font-family:'Unbounded',sans-serif;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.48);
+  margin-bottom:22px;
+}
+.testimonial-quote{
+  font-size:15px;
+  line-height:1.85;
+  color:rgba(255,255,255,.82);
+  font-weight:300;
+  white-space:pre-line;
+  flex:1;
+}
+.testimonial-author{
+  margin-top:28px;
+  padding-top:18px;
+  border-top:1px solid rgba(255,255,255,.14);
+  font-size:14px;
+  font-weight:900;
+  color:#fff;
+}
+.testimonials-action{
+  margin-top:34px;
+}
+.google-review-button{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  min-height:52px;
+  padding:17px 31px;
+  border:1.5px solid rgba(200,146,42,.72);
+  color:${C.gold};
+  background:transparent;
+  text-decoration:none;
+  font-family:'Unbounded',sans-serif;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  transition:background .25s,color .25s,border-color .25s;
+}
+.google-review-button:hover{
+  background:${C.gold};
+  color:${C.black};
+  border-color:${C.gold};
+}
+
 @media (min-width:769px){.show-mobile{display:none!important}}
 
 @media (max-width:900px){
@@ -385,6 +516,14 @@ header{
   .cookie-buttons{
     grid-template-columns:1fr;
   }
+}
+
+
+@media (max-width:900px){
+  .testimonials-header{display:block;margin-bottom:34px}
+  .testimonials-header p{margin-top:20px;max-width:none}
+  .testimonials-grid{grid-template-columns:1fr}
+  .testimonial-card{min-height:auto}
 }
 
 @media (max-width:560px){
@@ -636,6 +775,47 @@ function MeetAlbert() {
   </section>;
 }
 
+
+function TestimonialsSection() {
+  return (
+    <section id="testimonials" className="section testimonials-section">
+      <div className="testimonials-container">
+        <div className="testimonials-header">
+          <div>
+            <div className="accent-bar" />
+            <div className="ub" style={{ fontSize: 10, letterSpacing: ".24em", textTransform: "uppercase", color: C.gold, fontWeight: 700 }}>
+              Testimonials
+            </div>
+            <h2 className="ub" style={{ marginTop: 22 }}>
+              Trusted by Goalies and Families
+            </h2>
+          </div>
+          <p>
+            Real Google reviews from goalies and parents who experienced the Parente Goaltending training approach.
+          </p>
+        </div>
+
+        <div className="testimonials-grid">
+          {testimonials.map((testimonial) => (
+            <div className="testimonial-card" key={testimonial.name}>
+              <div className="testimonial-stars">★★★★★</div>
+              <div className="testimonial-label">{testimonial.label}</div>
+              <p className="testimonial-quote">“{testimonial.quote}”</p>
+              <div className="testimonial-author">{testimonial.name}</div>
+            </div>
+          ))}
+        </div>
+
+        <div className="testimonials-action">
+          <a href={googleReviewsUrl} target="_blank" rel="noreferrer" className="google-review-button">
+            Read More Reviews on Google <ArrowSvg size={13} />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Programs() {
   return <section id="programs" className="section" style={{ background: C.soft, padding: "120px 32px" }}>
     <div style={{ maxWidth: 1280, margin: "0 auto" }}>
@@ -752,36 +932,6 @@ function Camps() {
           </div>
         </div>
       </motion.div>
-    </div>
-  </section>;
-}
-
-function Training() {
-  return <section id="training" className="section" style={{ background: C.ink, padding: "120px 32px", color: "#fff" }}>
-    <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-      <div className="grid-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
-        <div>
-          <div style={{ display: "inline-block", width: 40, height: 2, background: C.red, marginBottom: 20 }} />
-          <h2 className="ub" style={{ fontSize: "clamp(28px,4vw,52px)", fontWeight: 900, lineHeight: 1.05, letterSpacing: "-.02em" }}>
-            Details That<br /><span style={{ color: C.red }}>Transfer Into Games</span>
-          </h2>
-          <p style={{ marginTop: 28, fontSize: 16, lineHeight: 1.85, color: "rgba(255,255,255,.5)", fontWeight: 300, maxWidth: 480 }}>
-            Training is built around goalie-specific habits that actually show up in games: movement, positioning, tracking, control, and confidence under pressure.
-          </p>
-          <a href="#contact" onClick={(e) => handleInternalNav(e, "#contact")} className="cta-primary" style={{ marginTop: 40 }}>
-            <span>Start Training</span><ArrowSvg size={14} />
-          </a>
-        </div>
-
-        <div style={{ padding: "42px 44px", borderLeft: `3px solid ${C.red}`, background: "rgba(176,42,46,.08)" }}>
-          <div className="ub" style={{ fontSize: 11, letterSpacing: ".18em", textTransform: "uppercase", color: C.red, marginBottom: 18 }}>Training system</div>
-          <h3 className="ub" style={{ fontSize: "clamp(24px,3vw,38px)", lineHeight: 1.08 }}>Technical reps with clear feedback</h3>
-          <p style={{ marginTop: 24, fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,.82)", fontStyle: "italic", fontWeight: 300 }}>
-            “The focus is not just doing more drills. The focus is understanding why each movement matters, correcting details in real time, and building habits that help goalies perform when the game speeds up.”
-          </p>
-          <div style={{ marginTop: 22, fontSize: 12, letterSpacing: ".14em", color: C.gold, fontWeight: 500, textTransform: "uppercase" }}>Coach Albert Parente</div>
-        </div>
-      </div>
     </div>
   </section>;
 }
@@ -1183,9 +1333,9 @@ export default function ParenteGoaltendingLandingPage() {
           <Hero />
           <About />
           <MeetAlbert />
+          <TestimonialsSection />
           <Programs />
           <Camps />
-          <Training />
           <LatestInstagramPosts />
           <Contact />
         </>
