@@ -639,9 +639,9 @@ function Nav() {
 
     <AnimatePresence>
       {open && <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} style={{ overflow: "hidden", background: C.white, borderTop: `1px solid ${C.border}` }}>
-        <div style={{ padding: "24px 32px", display: "flex", flexDirection: "column", gap: 20 }}>
+        <div style={{ padding: "24px 32px", display: "flex", flexDirection: "column", gap: 20, alignItems: "flex-end", textAlign: "right" }}>
           {navLinks.map(([label, href]) => <a key={href} href={href} onClick={(e) => handleInternalNav(e, href, () => setOpen(false))} className="ub" style={{ fontSize: 22, fontWeight: 700, color: C.ink, textDecoration: "none" }}>{label}</a>)}
-          <a href="#contact" className="cta-primary" style={{ alignSelf: "flex-start", marginTop: 8 }} onClick={(e) => handleInternalNav(e, "#contact", () => setOpen(false))}>
+          <a href="#contact" className="cta-primary" style={{ alignSelf: "flex-end", marginTop: 8 }} onClick={(e) => handleInternalNav(e, "#contact", () => setOpen(false))}>
             <span>Book Training</span><ArrowSvg size={13} />
           </a>
         </div>
@@ -790,9 +790,6 @@ function TestimonialsSection() {
               Trusted by Goalies and Families
             </h2>
           </div>
-          <p>
-            Real Google reviews from goalies and parents who experienced the Parente Goaltending training approach.
-          </p>
         </div>
 
         <div className="testimonials-grid">
