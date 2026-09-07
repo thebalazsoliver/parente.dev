@@ -503,15 +503,6 @@ body{font-family:'DM Sans',sans-serif;background:#FAFAFA;color:#111111}
   margin-top: 28px;
 }
 .contact-actions > a { justify-content: center; max-width: 100%; }
-.contact-instagram-profile {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  color: #B02A2E;
-  font-size: 14px;
-  text-underline-offset: 3px;
-  overflow-wrap: anywhere;
-}
 @media (max-width: 767px) {
   .contact-actions { flex-direction: column; align-items: stretch; }
   .contact-actions > a { width: 100%; min-height: 54px; }

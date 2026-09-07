@@ -646,21 +646,18 @@ function Contact() {
               Email us
             </a>
           </div>
-          <a
-            href={instagramUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="contact-instagram-profile"
-            aria-label="Open the Parente Goaltending Instagram profile (opens in a new tab)"
-          >
-            @parentegoaltending
-          </a>
 
           <div style={{ marginTop: 48, display: "flex", flexDirection: "column", borderTop: `1px solid ${C.border}` }}>
-            {[["Email", emailAddress, `mailto:${emailAddress}`], ["Hours", "By appointment", null]].map(([label, val, href]) => (
+            {[["Instagram", "@parentegoaltending", instagramUrl], ["Email", emailAddress, `mailto:${emailAddress}`], ["Hours", "By appointment", null]].map(([label, val, href]) => (
               <div key={label} className="contact-detail">
-                <div className="ub" style={{ width: 72, fontSize: 10, letterSpacing: ".18em", color: C.mid, fontWeight: 700, textTransform: "uppercase", flexShrink: 0 }}>{label}</div>
-                {href ? <a href={href} style={{ fontSize: 15, fontWeight: 500, color: C.ink, textDecoration: "none" }}>{val}</a> : <span style={{ fontSize: 15, fontWeight: 500, color: C.ink }}>{val}</span>}
+                <div className="ub" style={{ width: 72, fontSize: 10, letterSpacing: label === "Instagram" ? "0" : ".18em", color: C.mid, fontWeight: 700, textTransform: "uppercase", flexShrink: 0 }}>{label}</div>
+                {href ? <a
+                  href={href}
+                  target={href === instagramUrl ? "_blank" : undefined}
+                  rel={href === instagramUrl ? "noopener noreferrer" : undefined}
+                  aria-label={href === instagramUrl ? "Open the Parente Goaltending Instagram profile (opens in a new tab)" : undefined}
+                  style={{ fontSize: 15, fontWeight: 500, color: C.ink, textDecoration: "none" }}
+                >{val}</a> : <span style={{ fontSize: 15, fontWeight: 500, color: C.ink }}>{val}</span>}
               </div>
             ))}
           </div>
