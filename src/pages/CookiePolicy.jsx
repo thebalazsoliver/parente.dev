@@ -4,7 +4,7 @@ export default function CookiePolicy() {
       <h1>Cookie Policy</h1>
 
       <p>
-        <strong>Last updated:</strong> June 14, 2026
+        <strong>Last updated:</strong> September 8, 2026
       </p>
 
       <p>

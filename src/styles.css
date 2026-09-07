@@ -669,6 +669,7 @@ svg { flex-shrink: 0; }
   .marquee-inner { display: flex; white-space: nowrap; animation: marquee 20s linear infinite; }
   .ticker-copy { display: flex; }
   .ticker-item { padding: 14px 24px; font-size: 10px; letter-spacing: .14em; text-align: center; white-space: nowrap; }
+  .ticker { margin-top: 20px; }
   .cookie-modal::backdrop { backdrop-filter: none; -webkit-backdrop-filter: none; }
 }
 
@@ -723,6 +724,7 @@ svg { flex-shrink: 0; }
   .camps-subtitle { font-size: clamp(28px,7.2vw,40px); }
   .marquee-inner { animation-duration: 22s; }
   .ticker-item { padding-left: 20px; padding-right: 20px; }
+  .ticker { margin-top: 16px; }
 }
 
 @media (hover: none) {
