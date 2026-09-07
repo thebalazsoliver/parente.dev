@@ -20,9 +20,9 @@ const C = {
 
 const instagramUrl = "https://www.instagram.com/parentegoaltending?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==";
 const campPostUrl = "https://www.instagram.com/p/DYqrdsTjWvZ/";
-const phoneDisplay = "(647) 523-4438";
-const phoneHref = "tel:+16475234438";
-const emailAddress = "albert.parente@gmail.com";
+const phoneDisplay = "(647) 355-0324";
+const phoneHref = "tel:+16473550324";
+const emailAddress = "parentegoaltending@gmail.com";
 const businessName = "Parente Goaltending";
 
 const navLinks = [

@@ -2,7 +2,18 @@
 
 Forrás: a felhasználó által feltöltött `parentegoaltending.zip`. Dátum: 2026-09-07.
 
-## Sikeres ellenőrzések
+## Elérhetőségek frissítése - 2026-09-07
+
+Az optimalizált csomagban utólag az alábbi adatok frissültek:
+
+- Telefon: `(647) 355-0324`; kattintható hivatkozás: `tel:+16473550324`.
+- E-mail: `parentegoaltending@gmail.com`.
+
+A csere érinti az App.jsx elérhetőségeit és az ezekből képzett űrlapcímzettet, a két jogi oldalon szereplő e-mail-címeket, valamint a JavaScript nélkül megjelenő kapcsolati hivatkozást. A megjelenítési kód, CSS, képek és csomagfüggőségek változatlanok.
+
+A `node scripts/check-project.mjs` ismét sikeresen lefutott. Automatikus szöveges ellenőrzés igazolja, hogy a régi telefonszám és e-mail-cím nincs a csomagban, a telefonszám hivatkozása helyes, és a forrásfájlokban kizárólag a kért adatcsere történt. Ehhez az adatfrissítéshez új böngészős teszt vagy Vite-build nem futott. Az alábbi felületi eredmények a korábbi optimalizált változat tesztjére vonatkoznak.
+
+## Az eredeti optimalizálás sikeres ellenőrzései
 
 A JSX-modulok szintaktikai fordítása, a CSS PostCSS-elemzése, a konfigurációs JavaScript szintaktikai ellenőrzése és a `npm run check` alapjául szolgáló projektellenőrzés sikeres volt.
 
@@ -10,7 +21,7 @@ Az offline felületi teszt **96/96 ellenőrzése sikeres**. A vizsgált széless
 
 Vizsgálatok: vízszintes túlcsordulás; szekción belüli levágás; kártyaoszlopok; cookie-ablak méretezése; duplikált cím hiánya; futásidejű hibák; menünyitás, Escape, külső kattintás, fókusz és görgetés visszaállítása; asztali méretre váltás; anchor-navigáció; sütibeállítás mentése és visszatöltése; jogi modulok késleltetett kiértékelése; űrlap-validáció; tiltott tárhely kezelése; reduced-motion.
 
-Az eredeti nyolc szekció sorrendjét és normalizált szövegtartalmát összevetettük. Mind megmaradt. Az új, kizárólag mobilos coach-kivonatot a szöveg-összehasonlítás nem számolta kétszer. Mindkét jogi JSX-fájl bájtszinten változatlan.
+Az eredeti nyolc szekció sorrendjét és normalizált szövegtartalmát összevetettük. Mind megmaradt. Az új, kizárólag mobilos coach-kivonatot a szöveg-összehasonlítás nem számolta kétszer. Mindkét jogi JSX-fájl az eredeti optimalizálási tesztkor bájtszinten változatlan volt; az utólagos adatfrissítés kizárólag az e-mail-címeket módosította.
 
 ## Amit ez NEM igazol
 
