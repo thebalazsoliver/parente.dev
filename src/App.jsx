@@ -341,10 +341,6 @@ function Hero() {
         </div>
       </div>
     </div>
-    <div className="hero-mobile-coach">
-      <div className="hero-mobile-logo"><LogoMark eager sizes="48px" /></div>
-      <div><div className="ub">ALBERT PARENTE</div><span>COACH</span></div>
-    </div>
     <Ticker />
   </section>;
 }
